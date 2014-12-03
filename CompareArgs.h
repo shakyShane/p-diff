@@ -27,9 +27,9 @@ class CompareArgs
 public:
 	CompareArgs();
 	~CompareArgs();
-	bool Parse_Args(int argc, char **argv);	
+	bool Parse_Args(int argc, char **argv);
 	void Print_Args();
-	
+
 	RGBAImage		*ImgA;				// Image A
 	RGBAImage		*ImgB;				// Image B
 	RGBAImage		*ImgDiff;			// Diff image
@@ -39,6 +39,12 @@ public:
 	float			Gamma;				// The gamma to convert to linear color space
 	float			Luminance;			// the display's luminance
 	unsigned int	ThresholdPixels;	// How many pixels different to ignore
+	unsigned int	DiffBlue;	        // Blue  rgb value for diff
+	unsigned int	DiffGreen;	        // Green rgb value for diff
+	unsigned int	DiffRed;	        // Red   rgb value for diff
+	unsigned int	BgBlue;	            // Blue  rgb value for diff
+	unsigned int	BgGreen;            // Green rgb value for diff
+	unsigned int	BgRed;	            // Red   rgb value for diff
 	std::string		ErrorStr;			// Error string
 };
 

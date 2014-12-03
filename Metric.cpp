@@ -265,11 +265,11 @@ bool Yee_Compare(CompareArgs &args)
 		if (!pass) {
 			pixels_failed++;
 			if (args.ImgDiff) {
-				args.ImgDiff->Set(0, 0, 255, 255, index);
+				args.ImgDiff->Set(args.DiffBlue, args.DiffGreen, args.DiffRed, 255, index);
 			}
 		} else {
 			if (args.ImgDiff) {
-				args.ImgDiff->Set(255, 255, 255, 255, index);
+				args.ImgDiff->Set(args.BgBlue, args.BgGreen, args.BgRed, 255, index);
 			}
 		}
 	  }

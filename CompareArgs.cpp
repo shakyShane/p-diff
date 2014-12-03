@@ -53,6 +53,12 @@ CompareArgs::CompareArgs()
 	FieldOfView = 45.0f;
 	Gamma = 2.2f;
 	ThresholdPixels = 100;
+	DiffBlue  = 0;
+	DiffGreen = 0;
+	DiffRed   = 0;
+	BgBlue    = 0;
+	BgGreen   = 0;
+	BgRed     = 0;
 	Luminance = 100.0f;
 }
 
@@ -91,7 +97,36 @@ bool CompareArgs::Parse_Args(int argc, char **argv)
 			if (++i < argc) {
 				Luminance = (float) atof(argv[i]);
 			}
-		} else if (strcmp(argv[i], "-luminanceonly") == 0) {
+		} else if (strcmp(argv[i], "-diff-blue") == 0) {
+			if (++i < argc) {
+				DiffBlue = (int) atof(argv[i]);
+			}
+		} else if (strcmp(argv[i], "-diff-red") == 0) {
+			if (++i < argc) {
+				DiffRed = (int) atof(argv[i]);
+			}
+		}
+		else if (strcmp(argv[i], "-diff-green") == 0) {
+			if (++i < argc) {
+				DiffGreen = (int) atof(argv[i]);
+			}
+		}
+		else if (strcmp(argv[i], "-bg-red") == 0) {
+			if (++i < argc) {
+				BgGreen = (int) atof(argv[i]);
+			}
+		}
+		else if (strcmp(argv[i], "-bg-green") == 0) {
+			if (++i < argc) {
+				BgGreen = (int) atof(argv[i]);
+			}
+		}
+		else if (strcmp(argv[i], "-bg-blue") == 0) {
+			if (++i < argc) {
+				BgGreen = (int) atof(argv[i]);
+			}
+		}
+		else if (strcmp(argv[i], "-luminanceonly") == 0) {
 			LuminanceOnly = true;
 		} else if (strcmp(argv[i], "-output") == 0) {
 			if (++i < argc) {
